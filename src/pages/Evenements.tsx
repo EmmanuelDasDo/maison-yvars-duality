@@ -7,6 +7,7 @@ import ADNYvars from "@/components/shared/ADNYvars";
 import heroEvenements from "@/assets/hero-evenements.jpg";
 import soireeEntreprise from "@/assets/soiree-entreprise.jpg";
 import logoEvenements from "@/assets/logo-evenements-transparent.png";
+import logoButterfly from "@/assets/logo-evenements-butterfly.png";
 import logoCadeauxSimple from "@/assets/logo-yvars-simple.png";
 import jessicaYvars from "@/assets/jessica-yvars.jpg";
 
@@ -88,8 +89,8 @@ const Evenements = () => {
         
         <div className="relative z-10 container mx-auto px-4 text-center animate-fade-in-up">
           <div className="inline-block mb-8">
-            <div className="w-20 h-20 rounded-full bg-gradient-gold flex items-center justify-center shadow-gold animate-float">
-              <Sparkles className="w-10 h-10 text-[hsl(var(--evenements-black))]" />
+            <div className="w-20 h-20 rounded-full bg-gradient-gold flex items-center justify-center shadow-gold animate-float p-3">
+              <img src={logoButterfly} alt="Papillon Yvars" className="w-full h-full object-contain" />
             </div>
           </div>
           <h1 className="text-5xl md:text-8xl font-playfair font-bold text-white mb-8 tracking-tight">
