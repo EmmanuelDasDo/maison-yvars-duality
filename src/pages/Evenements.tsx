@@ -50,7 +50,7 @@ const Evenements = () => {
           <img 
             src={logoEvenements} 
             alt="Yvars Événements" 
-            className="h-16 md:h-20 brightness-0 invert drop-shadow-[0_0_20px_rgba(212,175,55,0.3)]"
+            className="h-16 md:h-20 drop-shadow-[0_0_30px_rgba(212,175,55,0.4)]"
           />
           <Link to="/cadeaux">
             <Button variant="outline" className="gap-2 border-[hsl(var(--evenements-gold))] text-[hsl(var(--evenements-gold))] hover:bg-[hsl(var(--evenements-gold))] hover:text-[hsl(var(--evenements-black))] backdrop-blur-sm bg-[hsl(var(--evenements-black))]/30">
