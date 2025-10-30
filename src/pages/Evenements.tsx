@@ -5,6 +5,7 @@ import { Sparkles, Users, Calendar, Wine, Gift } from "lucide-react";
 import Footer from "@/components/shared/Footer";
 import heroEvenements from "@/assets/hero-evenements.jpg";
 import soireeEntreprise from "@/assets/soiree-entreprise.jpg";
+import logoEvenements from "@/assets/logo-yvars-evenements.jpg";
 
 const Evenements = () => {
   const prestations = [
@@ -44,21 +45,17 @@ const Evenements = () => {
   return (
     <div className="min-h-screen bg-[hsl(var(--evenements-cream))] font-lato">
       {/* Header */}
-      <header className="absolute top-0 left-0 right-0 z-50 py-6">
+      <header className="absolute top-0 left-0 right-0 z-50 py-4 bg-gradient-to-b from-[hsl(var(--evenements-black))]/80 to-transparent">
         <div className="container mx-auto px-4 flex justify-between items-center">
-          <div className="flex items-center gap-3">
-            <div className="w-12 h-12 flex items-center justify-center">
-              <Sparkles className="w-8 h-8 text-[hsl(var(--evenements-gold))]" />
-            </div>
-            <div>
-              <div className="text-2xl font-playfair font-bold text-[hsl(var(--evenements-text))]">YVARS</div>
-              <div className="text-sm text-[hsl(var(--evenements-gold))] uppercase tracking-wide">Événements</div>
-            </div>
-          </div>
+          <img 
+            src={logoEvenements} 
+            alt="Yvars Événements" 
+            className="h-16 md:h-20 brightness-0 invert drop-shadow-[0_0_20px_rgba(212,175,55,0.3)]"
+          />
           <Link to="/cadeaux">
-            <Button variant="outline" className="gap-2 border-[hsl(var(--evenements-gold))] text-[hsl(var(--evenements-gold))] hover:bg-[hsl(var(--evenements-gold))] hover:text-[hsl(var(--evenements-black))]">
+            <Button variant="outline" className="gap-2 border-[hsl(var(--evenements-gold))] text-[hsl(var(--evenements-gold))] hover:bg-[hsl(var(--evenements-gold))] hover:text-[hsl(var(--evenements-black))] backdrop-blur-sm bg-[hsl(var(--evenements-black))]/30">
               <Gift className="w-4 h-4" />
-              Découvrir Yvars Cadeaux
+              <span className="hidden md:inline">Découvrir Yvars Cadeaux</span>
             </Button>
           </Link>
         </div>
@@ -70,23 +67,27 @@ const Evenements = () => {
           className="absolute inset-0 bg-cover bg-center"
           style={{ backgroundImage: `url(${heroEvenements})` }}
         >
-          <div className="absolute inset-0 bg-gradient-to-b from-[hsl(var(--evenements-black))]/70 via-[hsl(var(--evenements-black))]/50 to-[hsl(var(--evenements-black))]/80" />
+          <div className="absolute inset-0 bg-gradient-to-b from-[hsl(var(--evenements-black))]/80 via-[hsl(var(--evenements-black))]/60 to-[hsl(var(--evenements-black))]/85" />
+          {/* Overlay gold shimmer */}
+          <div className="absolute inset-0 bg-gradient-to-br from-transparent via-[hsl(var(--evenements-gold))]/5 to-transparent" />
         </div>
         
         <div className="relative z-10 container mx-auto px-4 text-center animate-fade-in-up">
-          <div className="inline-block mb-6">
-            <Sparkles className="w-16 h-16 text-[hsl(var(--evenements-gold))] animate-float" />
+          <div className="inline-block mb-8">
+            <div className="w-20 h-20 rounded-full bg-gradient-gold flex items-center justify-center shadow-gold animate-float">
+              <Sparkles className="w-10 h-10 text-[hsl(var(--evenements-black))]" />
+            </div>
           </div>
-          <h1 className="text-5xl md:text-7xl font-playfair font-bold text-white mb-6">
-            L'émotion sur mesure pour vos<br />
-            <span className="text-[hsl(var(--evenements-gold))]">moments d'entreprise</span>
+          <h1 className="text-5xl md:text-8xl font-playfair font-bold text-white mb-8 tracking-tight">
+            L'émotion sur mesure<br />
+            <span className="text-[hsl(var(--evenements-gold))] drop-shadow-[0_0_30px_rgba(212,175,55,0.5)]">pour vos moments d'exception</span>
           </h1>
-          <p className="text-xl md:text-2xl text-white/90 mb-8 max-w-2xl mx-auto">
+          <p className="text-xl md:text-2xl text-white/95 mb-10 max-w-2xl mx-auto font-light tracking-wide">
             Événements haut de gamme depuis 1980
           </p>
           <Button 
             size="lg" 
-            className="bg-[hsl(var(--evenements-gold))] hover:bg-[hsl(var(--evenements-gold-light))] text-[hsl(var(--evenements-black))] shadow-gold text-lg px-8 py-6 font-semibold"
+            className="bg-gradient-gold hover:brightness-110 text-[hsl(var(--evenements-black))] shadow-gold text-lg px-10 py-7 font-semibold transition-all hover:scale-105"
             asChild
           >
             <a href="#contact">Organiser mon événement</a>
@@ -95,12 +96,21 @@ const Evenements = () => {
       </section>
 
       {/* Prestations */}
-      <section className="py-24 bg-[hsl(var(--evenements-black))] text-white">
-        <div className="container mx-auto px-4">
-          <h2 className="text-4xl md:text-5xl font-playfair font-bold text-center mb-4">
+      <section className="py-24 bg-gradient-to-b from-[hsl(var(--evenements-black))] via-[hsl(var(--evenements-black))] to-[hsl(210_20%_10%)] text-white relative overflow-hidden">
+        {/* Subtle gold pattern overlay */}
+        <div className="absolute inset-0 opacity-5" style={{
+          backgroundImage: `radial-gradient(circle at 20% 50%, hsl(var(--evenements-gold)) 1px, transparent 1px), radial-gradient(circle at 80% 80%, hsl(var(--evenements-gold)) 1px, transparent 1px)`,
+          backgroundSize: '50px 50px'
+        }}></div>
+        
+        <div className="container mx-auto px-4 relative z-10">
+          <div className="text-center mb-6">
+            <div className="inline-block w-16 h-1 bg-gradient-gold mb-6 rounded-full"></div>
+          </div>
+          <h2 className="text-4xl md:text-6xl font-playfair font-bold text-center mb-6">
             Nos prestations
           </h2>
-          <p className="text-center text-lg text-white/70 mb-16 max-w-2xl mx-auto">
+          <p className="text-center text-lg text-white/80 mb-20 max-w-2xl mx-auto font-light">
             Chaque événement est une œuvre d'art unique
           </p>
           
@@ -108,13 +118,13 @@ const Evenements = () => {
             {prestations.map((item, index) => (
               <Card 
                 key={index} 
-                className="p-8 text-center bg-white/5 backdrop-blur border-[hsl(var(--evenements-gold))]/20 hover:border-[hsl(var(--evenements-gold))] hover:shadow-gold transition-all duration-300 hover:-translate-y-2"
+                className="p-8 text-center bg-white/5 backdrop-blur border-[hsl(var(--evenements-gold))]/30 hover:border-[hsl(var(--evenements-gold))] hover:shadow-gold hover:bg-white/10 transition-all duration-500 hover:-translate-y-2 group"
               >
-                <div className="w-16 h-16 mx-auto mb-6 bg-gradient-gold rounded-full flex items-center justify-center shadow-gold">
-                  <item.icon className="w-8 h-8 text-[hsl(var(--evenements-black))]" />
+                <div className="w-20 h-20 mx-auto mb-6 bg-gradient-gold rounded-full flex items-center justify-center shadow-gold group-hover:scale-110 transition-transform duration-300">
+                  <item.icon className="w-9 h-9 text-[hsl(var(--evenements-black))]" />
                 </div>
-                <h3 className="text-xl font-playfair font-semibold mb-3 text-white">{item.title}</h3>
-                <p className="text-white/70">{item.description}</p>
+                <h3 className="text-xl font-playfair font-semibold mb-4 text-white group-hover:text-[hsl(var(--evenements-gold))] transition-colors">{item.title}</h3>
+                <p className="text-white/70 leading-relaxed">{item.description}</p>
               </Card>
             ))}
           </div>
@@ -150,12 +160,14 @@ const Evenements = () => {
           {/* Testimonials */}
           <div className="grid md:grid-cols-2 gap-8 max-w-4xl mx-auto">
             {temoignages.map((item, index) => (
-              <Card key={index} className="p-8 border-[hsl(var(--evenements-gold))]/20 bg-white">
-                <div className="text-[hsl(var(--evenements-gold))] text-5xl mb-4 font-playfair">"</div>
-                <p className="text-xl font-playfair italic text-[hsl(var(--evenements-text))] mb-4">
+              <Card key={index} className="p-10 border-[hsl(var(--evenements-gold))]/30 bg-white hover:shadow-gold transition-all duration-300 relative overflow-hidden group">
+                <div className="absolute top-0 right-0 w-32 h-32 bg-gradient-gold opacity-5 rounded-full -translate-y-16 translate-x-16 group-hover:scale-150 transition-transform duration-500"></div>
+                <div className="text-[hsl(var(--evenements-gold))] text-6xl mb-6 font-playfair leading-none">"</div>
+                <p className="text-2xl font-playfair italic text-[hsl(var(--evenements-text))] mb-6 relative z-10">
                   {item.quote}
                 </p>
-                <p className="text-sm text-[hsl(var(--evenements-text))]/60">— {item.author}</p>
+                <div className="h-1 w-16 bg-gradient-gold mb-4 rounded-full"></div>
+                <p className="text-sm text-[hsl(var(--evenements-text))]/60 font-medium">— {item.author}</p>
               </Card>
             ))}
           </div>
@@ -195,17 +207,21 @@ const Evenements = () => {
       </section>
 
       {/* Contact Section */}
-      <section id="contact" className="py-24 bg-gradient-evenements text-white">
-        <div className="container mx-auto px-4 text-center">
-          <h2 className="text-4xl md:text-5xl font-playfair font-bold mb-6">
-            Créons ensemble votre événement d'exception
+      <section id="contact" className="py-28 bg-gradient-to-br from-[hsl(var(--evenements-black))] via-[hsl(210_20%_8%)] to-[hsl(var(--evenements-black))] text-white relative overflow-hidden">
+        {/* Decorative gold glow */}
+        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[800px] bg-[hsl(var(--evenements-gold))]/10 rounded-full blur-3xl"></div>
+        
+        <div className="container mx-auto px-4 text-center relative z-10">
+          <div className="inline-block w-20 h-1 bg-gradient-gold mb-8 rounded-full"></div>
+          <h2 className="text-4xl md:text-6xl font-playfair font-bold mb-8">
+            Créons ensemble votre<br />événement d'exception
           </h2>
-          <p className="text-xl mb-10 opacity-90 max-w-2xl mx-auto">
+          <p className="text-xl md:text-2xl mb-12 opacity-90 max-w-2xl mx-auto font-light leading-relaxed">
             Partagez-nous votre vision, nous la transformerons en réalité
           </p>
           <Button 
             size="lg" 
-            className="bg-[hsl(var(--evenements-gold))] hover:bg-[hsl(var(--evenements-gold-light))] text-[hsl(var(--evenements-black))] shadow-gold text-lg px-10 py-7 font-semibold"
+            className="bg-gradient-gold hover:brightness-110 text-[hsl(var(--evenements-black))] shadow-gold text-lg px-12 py-8 font-semibold transition-all hover:scale-105"
           >
             Demander un devis pour votre événement
           </Button>
