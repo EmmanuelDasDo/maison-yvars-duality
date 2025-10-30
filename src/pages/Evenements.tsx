@@ -5,7 +5,7 @@ import { Sparkles, Users, Calendar, Wine, Gift } from "lucide-react";
 import Footer from "@/components/shared/Footer";
 import heroEvenements from "@/assets/hero-evenements.jpg";
 import soireeEntreprise from "@/assets/soiree-entreprise.jpg";
-import logoEvenements from "@/assets/logo-yvars-evenements.jpg";
+import logoEvenements from "@/assets/logo-evenements-transparent.png";
 
 const Evenements = () => {
   const prestations = [
@@ -50,7 +50,7 @@ const Evenements = () => {
           <img 
             src={logoEvenements} 
             alt="Yvars Événements" 
-            className="h-16 md:h-20 drop-shadow-[0_0_30px_rgba(212,175,55,0.4)]"
+            className="h-20 md:h-28 drop-shadow-[0_2px_15px_rgba(212,175,55,0.4)]"
           />
           <Link to="/cadeaux">
             <Button variant="outline" className="gap-2 border-[hsl(var(--evenements-gold))] text-[hsl(var(--evenements-gold))] hover:bg-[hsl(var(--evenements-gold))] hover:text-[hsl(var(--evenements-black))] backdrop-blur-sm bg-[hsl(var(--evenements-black))]/30">
