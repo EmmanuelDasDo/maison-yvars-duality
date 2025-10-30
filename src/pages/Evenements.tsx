@@ -7,7 +7,7 @@ import ADNYvars from "@/components/shared/ADNYvars";
 import heroEvenements from "@/assets/hero-evenements.jpg";
 import soireeEntreprise from "@/assets/soiree-entreprise.jpg";
 import logoEvenements from "@/assets/logo-evenements-transparent.png";
-import logoButterfly from "@/assets/logo-evenements-butterfly.png";
+import logoButterfly from "@/assets/papillon-or.png";
 import logoCadeauxSimple from "@/assets/logo-yvars-simple.png";
 import jessicaYvars from "@/assets/jessica-yvars.jpg";
 
