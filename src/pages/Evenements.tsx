@@ -176,15 +176,15 @@ const Evenements = () => {
       </section>
 
       {/* À propos Jessica */}
-      <section className="py-24 bg-[hsl(var(--evenements-cream))]">
+      <section className="py-24 bg-white">
         <div className="container mx-auto px-4">
           <div className="grid md:grid-cols-2 gap-12 items-center max-w-6xl mx-auto">
             <div className="relative">
-              <div className="aspect-[3/4] rounded-2xl overflow-hidden shadow-gold">
+              <div className="rounded-2xl overflow-hidden shadow-gold">
                 <img 
                   src={jessicaYvars} 
                   alt="Jessica Yvars" 
-                  className="w-full h-full object-cover"
+                  className="w-full h-auto object-contain"
                 />
               </div>
             </div>
