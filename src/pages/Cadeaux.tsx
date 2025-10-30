@@ -3,6 +3,7 @@ import { Button } from "@/components/ui/button";
 import { Card } from "@/components/ui/card";
 import { Gift, Package, Truck, Users, Sparkles, PenTool } from "lucide-react";
 import Footer from "@/components/shared/Footer";
+import ADNYvars from "@/components/shared/ADNYvars";
 import logoCadeaux from "@/assets/logo-yvars-cadeaux.png";
 import heroCadeaux from "@/assets/hero-cadeaux.jpg";
 import objetsPublicitaires from "@/assets/objets-publicitaires.jpg";
@@ -154,6 +155,9 @@ const Cadeaux = () => {
           </div>
         </div>
       </section>
+
+      {/* ADN Yvars */}
+      <ADNYvars variant="cadeaux" />
 
       {/* Contact Section */}
       <section id="contact" className="py-20 bg-[hsl(var(--cadeaux-red))] text-white">

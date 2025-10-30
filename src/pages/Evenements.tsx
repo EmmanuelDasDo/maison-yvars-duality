@@ -3,9 +3,11 @@ import { Button } from "@/components/ui/button";
 import { Card } from "@/components/ui/card";
 import { Sparkles, Users, Calendar, Wine, Gift } from "lucide-react";
 import Footer from "@/components/shared/Footer";
+import ADNYvars from "@/components/shared/ADNYvars";
 import heroEvenements from "@/assets/hero-evenements.jpg";
 import soireeEntreprise from "@/assets/soiree-entreprise.jpg";
 import logoEvenements from "@/assets/logo-evenements-transparent.png";
+import logoCadeauxSimple from "@/assets/logo-yvars-simple.png";
 import jessicaYvars from "@/assets/jessica-yvars.jpg";
 
 const Evenements = () => {
@@ -48,11 +50,22 @@ const Evenements = () => {
       {/* Header */}
       <header className="absolute top-0 left-0 right-0 z-50 py-4 bg-gradient-to-b from-[hsl(var(--evenements-black))]/80 to-transparent">
         <div className="container mx-auto px-4 flex justify-between items-center">
-          <img 
-            src={logoEvenements} 
-            alt="Yvars Événements" 
-            className="h-20 md:h-28 drop-shadow-[0_2px_15px_rgba(212,175,55,0.4)]"
-          />
+          <div className="flex items-center gap-4">
+            <img 
+              src={logoEvenements} 
+              alt="Yvars Événements" 
+              className="h-20 md:h-28 drop-shadow-[0_2px_15px_rgba(212,175,55,0.4)]"
+            />
+            {/* Petit logo cadeau pour rappeler l'autre univers */}
+            <div className="hidden md:flex items-center gap-2 text-white/60 text-xs">
+              <div className="h-6 w-px bg-white/20"></div>
+              <img 
+                src={logoCadeauxSimple} 
+                alt="Yvars Cadeaux" 
+                className="h-6 opacity-40 hover:opacity-70 transition-opacity"
+              />
+            </div>
+          </div>
           <Link to="/cadeaux">
             <Button variant="outline" className="gap-2 border-[hsl(var(--evenements-gold))] text-[hsl(var(--evenements-gold))] hover:bg-[hsl(var(--evenements-gold))] hover:text-[hsl(var(--evenements-black))] backdrop-blur-sm bg-[hsl(var(--evenements-black))]/30">
               <Gift className="w-4 h-4" />
@@ -143,7 +156,16 @@ const Evenements = () => {
           </p>
           
           <div className="mb-16">
-            <div className="relative rounded-2xl overflow-hidden shadow-evenements max-w-5xl mx-auto">
+            <div className="relative rounded-2xl overflow-hidden shadow-evenements max-w-5xl mx-auto group">
+              {/* Petit logo cadeau en coin supérieur droit */}
+              <div className="absolute top-6 right-6 z-10 opacity-30 group-hover:opacity-50 transition-opacity">
+                <img 
+                  src={logoCadeauxSimple} 
+                  alt="Maison Yvars" 
+                  className="h-8 brightness-0 invert"
+                />
+              </div>
+              
               <img 
                 src={soireeEntreprise} 
                 alt="Soirée d'entreprise de prestige" 
@@ -205,6 +227,9 @@ const Evenements = () => {
           </div>
         </div>
       </section>
+
+      {/* ADN Yvars */}
+      <ADNYvars variant="evenements" />
 
       {/* Contact Section */}
       <section id="contact" className="py-28 bg-gradient-to-br from-[hsl(var(--evenements-black))] via-[hsl(210_20%_8%)] to-[hsl(var(--evenements-black))] text-white relative overflow-hidden">
