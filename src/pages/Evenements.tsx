@@ -98,13 +98,23 @@ const Evenements = () => {
           <p className="text-xl md:text-2xl text-white/95 mb-10 max-w-2xl mx-auto font-light tracking-wide">
             Événements haut de gamme depuis 1980
           </p>
-          <Button 
-            size="lg" 
-            className="bg-gradient-gold hover:brightness-110 text-[hsl(var(--evenements-black))] shadow-gold text-lg px-10 py-7 font-semibold transition-all hover:scale-105"
-            asChild
-          >
-            <a href="#contact">Organiser mon événement</a>
-          </Button>
+          <div className="flex flex-col sm:flex-row gap-4 justify-center">
+            <Button 
+              size="lg" 
+              className="bg-gradient-gold hover:brightness-110 text-[hsl(var(--evenements-black))] shadow-gold text-lg px-10 py-7 font-semibold transition-all hover:scale-105"
+              asChild
+            >
+              <Link to="/devis">Demander un devis</Link>
+            </Button>
+            <Button 
+              size="lg" 
+              variant="outline"
+              className="border-[hsl(var(--evenements-gold))] text-[hsl(var(--evenements-gold))] hover:bg-[hsl(var(--evenements-gold))] hover:text-[hsl(var(--evenements-black))] backdrop-blur-sm bg-[hsl(var(--evenements-black))]/30 text-lg px-10 py-7 font-semibold transition-all hover:scale-105"
+              asChild
+            >
+              <a href="#contact">Nous contacter</a>
+            </Button>
+          </div>
         </div>
       </section>
 
