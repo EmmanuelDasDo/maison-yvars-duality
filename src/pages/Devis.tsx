@@ -97,7 +97,10 @@ const Devis = () => {
     "Soirée d'entreprise",
     "Séminaire / Convention",
     "Team building",
-    "Inauguration / Lancement de produit",
+    "Événements CSE",
+    "Petit déjeuner d'entreprise",
+    "Sortie de produits / Lancement",
+    "Inauguration",
     "Arbre de Noël / Événement festif",
     "Autre",
   ];
@@ -112,12 +115,16 @@ const Devis = () => {
   const servicesOptions = [
     "Organisation globale de l'événement",
     "Traiteur & boissons",
+    "Petit déjeuner / brunch",
     "Recherche et location de lieu",
     "Scénographie / décoration",
+    "Animation CSE (comité d'entreprise)",
     "DJ / Musique live",
     "Animations (artistiques, ludiques, team building…)",
     "Photo / vidéo",
     "Gestion technique (son, lumière, régie)",
+    "Stand / exposition produits",
+    "Démonstration produits",
   ];
 
   const connaissanceOptions = [
